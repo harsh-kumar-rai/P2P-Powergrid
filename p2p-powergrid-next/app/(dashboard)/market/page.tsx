@@ -152,7 +152,7 @@ export default function MarketPage() {
       </div>
 
       {showSignature && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 animate-fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
           <div className="bg-slate-100 rounded-2xl w-full max-w-sm shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden border border-slate-300">
             <div className="bg-slate-200 p-4 border-b border-slate-300 flex items-center justify-between">
               <div className="flex items-center gap-2">
