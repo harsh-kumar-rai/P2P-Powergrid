@@ -4,17 +4,14 @@
 
 Consumers and prosumers can buy and sell renewable energy directly on a transparent marketplace with blockchain-verified transactions, real-time pricing, and ML-powered demand forecasting.
 
-<<<<<<< HEAD
-![Dashboard](p2p-powergrid-next/docs/screenshots/dashboard.png)
+![Dashboard](docs/screenshots/dashboard.png)
 # ⚡ P2P PowerGrid
 
 > A decentralized peer-to-peer energy trading platform built with Next.js 15, Turso, Solidity smart contracts, and AI-powered insights.
 
 Consumers and prosumers can buy and sell renewable energy directly on a transparent marketplace with blockchain-verified transactions, real-time pricing, and ML-powered demand forecasting.
 
-=======
 ![Dashboard](docs/screenshots/dashboard.png)
->>>>>>> 63aa5f9 (refactor: flatten project structure + add Quick Demo Login button)
 
 ---
 
@@ -242,7 +239,3 @@ MIT
 ---
 
 Built with ⚡ by [Harsh Kumar Rai](https://github.com/harsh-kumar-rai)
-<<<<<<< HEAD
-
-=======
->>>>>>> 63aa5f9 (refactor: flatten project structure + add Quick Demo Login button)
