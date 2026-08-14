@@ -1,9 +1,10 @@
 # ⚡ P2P PowerGrid
 
-A decentralized peer-to-peer energy trading platform built with Next.js 15, Turso, Solidity smart contracts, and AI-powered insights.
+> A decentralized peer-to-peer energy trading platform built with Next.js 15, Turso, Solidity smart contracts, and AI-powered insights.
 
-See [`p2p-powergrid-next/`](./p2p-powergrid-next/) for the full project, setup instructions, and documentation.
+Consumers and prosumers can buy and sell renewable energy directly on a transparent marketplace with blockchain-verified transactions, real-time pricing, and ML-powered demand forecasting.
 
+<<<<<<< HEAD
 ![Dashboard](p2p-powergrid-next/docs/screenshots/dashboard.png)
 # ⚡ P2P PowerGrid
 
@@ -11,6 +12,9 @@ See [`p2p-powergrid-next/`](./p2p-powergrid-next/) for the full project, setup i
 
 Consumers and prosumers can buy and sell renewable energy directly on a transparent marketplace with blockchain-verified transactions, real-time pricing, and ML-powered demand forecasting.
 
+=======
+![Dashboard](docs/screenshots/dashboard.png)
+>>>>>>> 63aa5f9 (refactor: flatten project structure + add Quick Demo Login button)
 
 ---
 
@@ -92,7 +96,7 @@ Consumers and prosumers can buy and sell renewable energy directly on a transpar
 ```bash
 # Clone the repository
 git clone https://github.com/harsh-kumar-rai/P2P-Powergrid.git
-cd P2P-Powergrid/p2p-powergrid-next
+cd P2P-Powergrid
 
 # Install dependencies
 npm install
@@ -108,14 +112,14 @@ npm run seed
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — **demo account:** `demo@powergrid.io` / `demo123`
+Open [http://localhost:3000](http://localhost:3000) — **demo account:** `demo@powergrid.io` / `demo123` (or use the **Quick Demo Login** button on the login page)
 
 ---
 
 ## 📁 Project Structure
 
 ```
-p2p-powergrid-next/
+P2P-Powergrid/
 ├── app/
 │   ├── api/                    # REST API routes
 │   │   ├── auth/login/         # POST — JWT authentication
@@ -133,7 +137,7 @@ p2p-powergrid-next/
 │   │   ├── market/             # Buy/sell energy marketplace
 │   │   ├── wallet/             # Balance, history chart, transactions
 │   │   └── forecast/           # ML-powered 24h predictions
-│   ├── login/                  # Authentication page
+│   ├── login/                  # Authentication page (with Quick Demo Login)
 │   ├── not-found.tsx           # Custom 404 page
 │   └── layout.tsx              # Root layout
 ├── components/
@@ -206,7 +210,7 @@ npm run test:api       # requires dev server running
 
 1. Push to GitHub
 2. Import project in [Vercel](https://vercel.com)
-3. Set root directory to `p2p-powergrid-next`
+3. Root directory: `.` (project root — no subdirectory needed)
 4. Add environment variables:
    - `TURSO_DATABASE_URL`
    - `TURSO_AUTH_TOKEN`
@@ -238,4 +242,7 @@ MIT
 ---
 
 Built with ⚡ by [Harsh Kumar Rai](https://github.com/harsh-kumar-rai)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 63aa5f9 (refactor: flatten project structure + add Quick Demo Login button)

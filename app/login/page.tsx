@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Zap, ArrowRight, Activity, Wallet, UploadCloud, Factory, Check } from "lucide-react"
+import { Zap, ArrowRight, Activity, Wallet, UploadCloud, Factory, Check, Loader2 } from "lucide-react"
 import toast from "react-hot-toast"
 import { Button, Input, Card } from "@/components/ui"
 import { UserRole } from "@/lib/types"
@@ -10,13 +10,28 @@ import * as api from "@/lib/api"
 
 export default function LoginPage() {
   const router = useRouter()
-  const [isSignUp, setIsSignUp] = useState(true)
+  const [isSignUp, setIsSignUp] = useState(false)
   const [role, setRole] = useState<string>(UserRole.CONSUMER)
   const [method, setMethod] = useState<"email" | "wallet">("email")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [file, setFile] = useState<File | null>(null)
   const [isLoading, setIsLoading] = useState(false)
+  const [isDemoLoading, setIsDemoLoading] = useState(false)
+
+  async function handleDemoLogin() {
+    setIsDemoLoading(true)
+    try {
+      const data = await api.login("demo@powergrid.io", "demo123")
+      api.setToken(data.token)
+      toast.success("Welcome! You're logged in as a demo user")
+      router.push("/dashboard")
+    } catch {
+      toast.error("Demo account unavailable — try signing up")
+    } finally {
+      setIsDemoLoading(false)
+    }
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -245,6 +260,24 @@ export default function LoginPage() {
             </div>
           )}
         </Card>
+
+        {/* Demo Login Divider & Button */}
+        <div className="mt-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="flex-1 h-px bg-slate-200" />
+            <span className="text-xs text-slate-400 font-medium whitespace-nowrap">or try the demo</span>
+            <div className="flex-1 h-px bg-slate-200" />
+          </div>
+
+          <button
+            type="button"
+            onClick={handleDemoLogin}
+            disabled={isDemoLoading}
+            className="w-full flex items-center justify-center h-11 rounded-xl bg-slate-900 text-white text-sm font-medium shadow-lg shadow-slate-900/20 hover:bg-slate-800 active:scale-[0.98] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {isDemoLoading ? "Logging in..." : "Quick Demo Login"}
+          </button>
+        </div>
       </div>
     </div>
   )
